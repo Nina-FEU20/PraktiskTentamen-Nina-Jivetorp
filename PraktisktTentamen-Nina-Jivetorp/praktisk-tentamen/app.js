@@ -83,15 +83,15 @@ Country.prototype.getTime = function(){
     if(localHour < 0){
         localHour = Math.abs(localHour); 
     }
-    
-    // putting hour and minutes together
-    let localTime = `${localHour}.${minutes}`; 
-
     // If its a single number, it shows for example 8 instead of 08. 
     // Adding the 0 infront to make it look better! 
-    if(localTime < 10) {
-        return `0${localHour}.${minutes}`;
-    } else {
-        return localTime; 
+    if(localHour < 10){
+        localHour = `0${localHour}`
     }
+    
+    // putting hour and minutes together
+    let localTime = `${localHour}:${minutes}`; 
+    
+    return localTime; 
+
 }
